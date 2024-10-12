@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="inventory.css">
+    <title>Inventory System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .menu-item {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .menu-item h2 {
+            margin-bottom: 10px;
+        }
+
+        .menu-item p {
+            margin-bottom: 10px;
+        }
+
+        button.add-to-cart {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button.add-to-cart:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .cart {
+            margin-top: 30px;
+        }
+
+        .cart-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cart-items li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+<body>
+
+    <div class="container">
+        <h1>Inventory System</h1>
+
+        <div class="menu-container">
+            <div class="menu-item" data-name="Item 1"  data-stock="10">
+                <h2>Item 1</h2>
+                
+                <p>Stock: <span class="stock-count">10</span></p>
+                <div class="stock-controls">
+                    <button class="stock-button add-stock">+</button>
+                    <button class="stock-button subtract-stock">-</button>
+                </div>
+                <button class="add-to-cart"></button>
+            </div>
+
+            <div class="menu-item" data-name="Item 2"  data-stock="5">
+                <h2>Item 2</h2>
+        
+                <p>Stock: <span class="stock-count">5</span></p>
+                <div class="stock-controls">
+                    <button class="stock-button add-stock">+</button>
+                    <button class="stock-button subtract-stock">-</button>
+                </div>
+                <button class="add-to-cart"></button>
+            </div>
+
+            <div class="menu-item" data-name="Item 3"  data-stock="3">
+                <h2>Item 3</h2>
+                
+                <p>Stock: <span class="stock-count">3</span></p>
+                <div class="stock-controls">
+                    <button class="stock-button add-stock">+</button>
+                    <button class="stock-button subtract-stock">-</button>
+                </div>
+                <button class="add-to-cart"></button>
+            </div>
+        </div>
+
+        
+    </div>
+
+  <div class="side-menu">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="signup.html">SignUp</a></li>
+      <li><a href="inventory.html">Inventory</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="ordering.html">Orders</a></li>
+      <li><a href="TITO.html">TITO</a></li>
+    </ul>
+  </div>
+  <script src="function.js"></script>
+</body>
+</html>

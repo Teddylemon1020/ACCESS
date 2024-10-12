@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .menu-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin-left: 100px; /* Adjust to move the container to the right */
+  }
+  
+
+  .menu-item {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .image-placeholder {
+    width: 150px; /* Set the width of the frame */
+    height: 150px; /* Set the height of the frame */
+    overflow: hidden; /* Hide overflow if the image is larger */
+    margin: 0 auto; /* Center the image placeholder */
+    border-radius: 15px;
+  }
+  
+  .image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire area while maintaining its aspect ratio */
+    border-radius: 15px; /* Apply the fillet edges */
+  }
+  
+  
+  button.add-to-cart {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  button.add-to-cart:hover {
+    background-color: #218838;
+  }
+  
+  .cart {
+    width: 350px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 30px;
+  }
+  
+  #cart-items {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #cart-items li {
+    margin-bottom: 10px;
+  }
