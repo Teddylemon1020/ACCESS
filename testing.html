@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation Receipt</title>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Styling the receipt container */
+    .receipt-container {
+      background-color: white;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    /* Styling the order confirmation */
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #666;
+      margin: 5px 0;
+    }
+
+    #barcode {
+      margin-top: 20px;
+    }
+
+    /* Adding dashed lines to imitate a real receipt */
+    .dashed-line {
+      border-top: 1px dashed #666;
+      margin: 10px 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="receipt-container">
+    <h1>Order Confirmed</h1>
+    <p>Order Number: <span id="order-number"></span></p>
+    <div class="dashed-line"></div>
+    <p>Thank you for your purchase!</p>
+    <svg id="barcode"></svg>
+    <div class="dashed-line"></div>
+    <p>Visit us again!</p>
+  </div>
+
+  <script>
+    // Function to get query parameters from the URL
+    function getQueryParameter(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // Get the order number from the URL query parameter
+    const orderNumber = getQueryParameter('order');
+    if (orderNumber) {
+      // Display the order number
+      document.getElementById('order-number').textContent = orderNumber;
+
+      // Generate the barcode using JsBarcode
+      JsBarcode("#barcode", orderNumber, {
+        format: "CODE128",
+        displayValue: true
+      });
+    } else {
+      alert('Order number not found!');
+      window.location.href = `ordering.html?order=${orderNumber}`;
+    }
+  </script>
+
+</body>
+</html>

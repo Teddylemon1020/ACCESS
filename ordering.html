@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Menu</title>
+  <link rel="stylesheet" href="orderingstyle.css">
+  <link rel="stylesheet" href="navigation.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+
+</head>
+<body>
+    <header class="header">
+        <h1>Promos!!!!!!!!!!</h1>
+        <button class="menu-toggle" onclick="window.location.href='index.html'">☰ Menu</button>
+    </header>
+
+  <div class="menu-container">
+    <!-- Food Menu Items -->
+    <div class="menu-item" data-name="burger" data-price="8.99" data-stock="10">
+      <div class="image-placeholder">
+        <img src="menu\ADOSILOG.jpeg" alt="Pizza">
+      </div>
+      <p>ADOSILOG</p>
+      <p>Price: $8.99</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <!-- Repeat for 13 items -->
+    <div class="menu-item" data-name="Burger" data-price="5.99" data-stock="10">
+      <div class="image-placeholder">
+        <img src="menu\BANGSILOG.webp" alt="Burger">
+      </div>
+      <p>BANGSILOG</p>
+      <p>Price: $5.99</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="menu-item" data-name="Burger" data-price="5.99" data-stock="10">
+        <div class="image-placeholder">
+          <img src="menu\CHICKSILOG.jpeg" alt="Burger">
+        </div>
+        <p>CHICKSILOG</p>
+        <p>Price: $5.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-name="Burger" data-price="5.99" data-stock="10">
+        <div class="image-placeholder">
+          <img src="menu\CORNSILOG.png" alt="Burger">
+        </div>
+        <p>CORNSILOG</p>
+        <p>Price: $5.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-name="Burger" data-price="5.99" data-stock="10">
+        <div class="image-placeholder">
+          <img src="menu\DANGSILOG.jpg" alt="Burger">
+        </div>
+        <p>DANGSILOG</p>
+        <p>Price: $5.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-name="Burger" data-price="5.99" data-stock="10">
+        <div class="image-placeholder">
+          <img src="menu\HOTSILOG.jpg" alt="Burger">
+        </div>
+        <p>HOTSILOG</p>
+        <p>Price: $5.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-name="Burger" data-price="5.99" data-stock="10">
+        <div class="image-placeholder">
+          <img src="menu\LIEMPOSILOG.jpg" alt="Burger">
+        </div>
+        <p>LIEMPOSILOG</p>
+        <p>Price: $5.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-name="Burger" data-price="5.99" data-stock="10">
+        <div class="image-placeholder">
+          <img src="menu\LONGSILOG.png" alt="Burger">
+        </div>
+        <p>LONGSILOG</p>
+        <p>Price: $5.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-name="Burger" data-price="5.99" data-stock="10">
+        <div class="image-placeholder">
+          <img src="menu\RIBSILOG.jpg" alt="Burger">
+        </div>
+        <p>RIBSILOG</p>
+        <p>Price: $5.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-name="Burger" data-price="5.99" data-stock="10">
+        <div class="image-placeholder">
+          <img src="menu\SISIGSILOG.jpg" alt="Burger">
+        </div>
+        <p>SISIGSILOG</p>
+        <p>Price: $5.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-name="Burger" data-price="5.99" data-stock="10">
+        <div class="image-placeholder">
+          <img src="menu\SPAMSILOG.jpg" alt="Burger">
+        </div>
+        <p>SPAMSILOG</p>
+        <p>Price: $5.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-name="Burger" data-price="5.99" data-stock="10">
+        <div class="image-placeholder">
+          <img src="menu\TAPSILOG.jpg" alt="Burger">
+        </div>
+        <p>TAPSILOG</p>
+        <p>Price: $5.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="menu-item" data-name="Burger" data-price="5.99" data-stock="10">
+        <div class="image-placeholder">
+          <img src="menu\TOCILOG.jpeg" alt="Burger">
+        </div>
+        <p>TOCILOG</p>
+        <p>Price: $5.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="total">0.00</span></p>
+        <button class="submit-btn" onclick="confirmOrder()">Confirm Order</button> <!-- Submit Order button -->
+        <div id="order-details">
+            <p>Order Number: <span id="order-number"></span></p>
+            <img id="barcode" alt="Order Barcode"/>
+        </div>
+    </div>
+
+
+
+
+    <script>
+      function confirmOrder() {
+        // Generate a random order number
+        const orderNumber = Math.floor(Math.random() * 1000000);
+    
+        // Redirect to the order confirmation page with the order number as a query parameter
+        window.location.href = `testing.html?order=${orderNumber}`;
+      }
+    </script>
+    
+
+    <script src="function.js"></script>
+</body>
+</html>
